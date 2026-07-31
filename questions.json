@@ -1,0 +1,52 @@
+[
+    {
+        "assessment_id": 1,
+        "assessment_name": "Maths idea",
+        "question": "5+(25-10)*2",
+        "option_a": "40",
+        "option_b": "35",
+        "option_c": "25",
+        "option_d": "97",
+        "correct_answer": "B"
+    },
+    {
+        "assessment_id": 1,
+        "assessment_name": "Maths idea",
+        "question": "200/2*3",
+        "option_a": "30.1",
+        "option_b": "32",
+        "option_c": "33",
+        "option_d": "33.3",
+        "correct_answer": "A"
+    },
+    {
+        "assessment_id": 1,
+        "assessment_name": "Maths idea",
+        "question": "What is factorial of 5",
+        "option_a": "20",
+        "option_b": "25",
+        "option_c": "60",
+        "option_d": "120",
+        "correct_answer": "D"
+    },
+    {
+        "assessment_id": 1,
+        "assessment_name": "Maths idea",
+        "question": "Which of the following values is not equal to 34(58+9)",
+        "option_a": "34 x 67",
+        "option_b": "58(34+9)",
+        "option_c": "34 x 58 + 34 x 9",
+        "option_d": "(9+58)34",
+        "correct_answer": "A"
+    },
+    {
+        "assessment_id": 1,
+        "assessment_name": "Maths idea",
+        "question": "Two angle of a triangle measure 15 and 85 . What is the measure for the thrid angle?",
+        "option_a": "50",
+        "option_b": "55",
+        "option_c": "60",
+        "option_d": "80",
+        "correct_answer": "D"
+    }
+]
