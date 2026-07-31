@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student dashboard</title>
+</head>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background-color: #37ec61c3;
+    }
+    .container{
+        width:550px;
+        margin: 99px auto;
+        padding:20px;
+        border:2px solid rgba(15, 12, 0, 0.964);
+        text-align:center;
+        background-color:rgba(254, 38, 207, 0.726) ;
+    }
+    button{
+            width:220px;
+            padding:10px;
+            margin:10px;
+            font-size:16px;
+        }
+</style>
+
+<body>
+
+<div class="container">
+
+<h1>Student Dashboard</h1>
+
+<hr>
+
+<h2>Welcome Student</h2>
+
+<p>Select an option below</p>
+
+{% if assessments %}
+<form action="/assessment" method="GET">
+    <label>Select assessment</label><br><br>
+    <select name="assessment_id" style="width: 100%; padding: 10px; margin-bottom: 20px;">
+        {% for assessment in assessments %}
+        <option value="{{ assessment.assessment_id }}">{{ assessment.assessment_name }} ({{ assessment.subject }})</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Start Assessment</button>
+</form>
+{% else %}
+<p>No assessments are available yet. Please ask the admin to create one.</p>
+{% endif %}
+
+<br>
+
+<form action="/result" method="GET">
+    <button>
+        View Result
+    </button>
+</form>
+
+<br>
+
+<form action="/logout" method="GET">
+    <button>
+        Logout
+    </button>
+</form>
+
+</div>
+
+</body>
+</html>

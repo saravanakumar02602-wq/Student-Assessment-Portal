@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Questions</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color:#49ecd6;
+        }
+
+        .container{
+            width:500px;
+            margin:50px auto;
+            padding:20px;
+            background:rgba(248, 254, 74, 0.815);
+            border:2px solid black;
+            border-radius:10px;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        table{
+            margin:auto;
+        }
+
+        input,select{
+            width:220px;
+            padding:6px;
+        }
+
+        button{
+            width:100px;
+            padding:8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add Questions</h2>
+
+<form action="/add_questions" method="POST">
+
+<table cellpadding="10">
+
+<tr>
+    <td>Assessment</td>
+    <td>
+        <select name="assessment_id" required>
+            <option value="">Select assessment</option>
+            {% for assessment in assessments %}
+            <option value="{{ assessment.assessment_id }}">{{ assessment.assessment_name }} ({{ assessment.subject }})</option>
+            {% endfor %}
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Question</td>
+    <td><input type="text" name="question" required></td>
+</tr>
+
+<tr>
+    <td>Option A</td>
+    <td><input type="text" name="option_a" required></td>
+</tr>
+
+<tr>
+    <td>Option B</td>
+    <td><input type="text" name="option_b" required></td>
+</tr>
+
+<tr>
+    <td>Option C</td>
+    <td><input type="text" name="option_c" required></td>
+</tr>
+
+<tr>
+    <td>Option D</td>
+    <td><input type="text" name="option_d" required></td>
+</tr>
+
+<tr>
+    <td>Correct Answer</td>
+    <td>
+        <select name="correct_answer">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+        <button type="submit">Save</button>
+        <button type="reset">Reset</button>
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+
+</body>
+</html>

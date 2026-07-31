@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Results</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#f2f2f2;
+        }
+
+        .container{
+            width:950px;
+            margin:90px auto;
+            background:white;
+            padding:20px;
+            border:2px solid black;
+            border-radius:10px;
+        }
+
+        h2{
+            text-align:center;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        th,td{
+            border:1px solid black;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background-color:lightgray;
+        }
+
+        button{
+            padding:8px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Assessment Results</h2>
+
+<table>
+
+<tr>
+    <th>S.No</th>
+    <th>Student Name</th>
+    <th>Assessment</th>
+    <th>Marks</th>
+    <th>Percentage</th>
+    <th>Result</th>
+</tr>
+
+{% for student in results %}
+<tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ student.student_name }}</td>
+    <td>{{ student.assessment_name }}</td>
+    <td>{{ student.marks }}</td>
+    <td>{{ student.percentage }}%</td>
+    <td>{{ student.result }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+
+<center>
+<form action="/admin_dashboard" method="GET">
+    <button type="submit">Back</button>
+</form>
+</center>
+
+</div>
+
+</body>
+</html>

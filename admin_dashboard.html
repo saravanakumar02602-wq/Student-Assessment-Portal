@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background:hsla(189, 92%, 62%, 0.923);
+        }
+
+        .container{
+            width:550px;
+            margin:80px auto;
+            padding:20px;
+            text-align:center;
+            background:rgba(254, 93, 146, 0.622);
+            border:2px solid black;
+            border-radius:10px;
+        }
+
+        button{
+            width:220px;
+            padding:10px;
+            margin:10px;
+            font-size:16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Admin Dashboard</h1>
+
+
+<form action="/create_assessment" method="GET">
+    <button type="submit">Create Assessment</button>
+</form>
+
+{% if assessments|length > 0 %}
+<form action="/view_assessment" method="GET">
+    <button type="submit">View Assessment</button>
+</form>
+{% endif %}
+
+<form action="/view_results" method="GET">
+    <button type="submit">View Results</button>
+</form>
+
+<form action="/add_questions" method="GET">
+    <button type="submit">Add Questions</button>
+</form>
+
+<form action="/logout" method="GET">
+    <button type="submit">Logout</button>
+</form>
+
+
+</div>
+
+</body>
+</html>

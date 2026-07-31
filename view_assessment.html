@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Assessments</title>
+</head>
+<body>
+
+<center>
+
+<h2>View Assessments</h2>
+
+{% if assessments %}
+<table border="1" cellpadding="10">
+<tr>
+    <th>S.No</th>
+    <th>Assessment Name</th>
+    <th>Subject</th>
+</tr>
+
+{% for assessment in assessments %}
+<tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ assessment.assessment_name }}</td>
+    <td>{{ assessment.subject }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% else %}
+<p>No assessments available.</p>
+{% endif %}
+
+<br>
+
+<form action="/admin_dashboard" method="GET">
+    <input type="submit" value="Back">
+</form>
+
+</center>
+
+</body>
+</html>

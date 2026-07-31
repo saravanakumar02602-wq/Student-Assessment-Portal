@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Assessment Portal</title>
+
+    <style>
+        body{
+            margin:10px;
+            background-color:#71c5e1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .box{
+            width:550px;
+            padding:20px;
+            border:2px solid rgba(0, 0, 0, 0.964);
+            background-color:rgb(250, 250, 153);
+            text-align:center;
+            border-radius:10px;
+        }
+
+        h1{
+            font-size:40px;
+        }
+
+        table{
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>Student Assessment Portal 🎓</h1>
+
+    {% if error %}
+    <p style="color:red; font-weight:bold;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post" action="/login">
+
+        <table cellpadding="8">
+
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" placeholder="Enter Username" required></td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" placeholder="Enter Password" required></td>
+            </tr>
+
+            <tr>
+                <td>Role</td>
+                <td>
+                    <select name="role" style="width: 100%; height: 20px">
+                        <option>Student</option>
+                        <option>Admin</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assessment Result</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f2f2f2;
+        }
+
+        .container{
+            width:500px;
+            margin:50px auto;
+            padding:20px;
+            background:white;
+            border:2px solid black;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        h2{
+            font-size:35px;
+        }
+
+        table{
+            width:100%;
+            margin-top:20px;
+        }
+
+        td{
+            padding:10px;
+            font-size:20px;
+        }
+
+        button{
+            width:150px;
+            padding:10px;
+            font-size:18px;
+            margin-top:20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Assessment Result</h2>
+
+<table>
+
+<tr>
+    <td><b>Student Name</b></td>
+    <td>{{ student_name }}</td>
+</tr>
+
+<tr>
+    <td><b>Assessment</b></td>
+    <td>{{ assessment_name }}</td>
+</tr>
+
+<tr>
+    <td><b>Total Questions</b></td>
+    <td>{{ total_questions }}</td>
+</tr>
+
+<tr>
+    <td><b>Correct Answers</b></td>
+    <td>{{ correct_answers }}</td>
+</tr>
+
+<tr>
+    <td><b>Marks</b></td>
+    <td>{{ marks }}</td>
+</tr>
+
+<tr>
+    <td><b>Percentage</b></td>
+    <td>{{ percentage }}%</td>
+</tr>
+
+<tr>
+    <td><b>Result</b></td>
+    <td>{{ result }}</td>
+</tr>
+
+</table>
+
+<form action="{{ back_url }}" method="GET">
+    <button type="submit">Back</button>
+</form>
+
+</div>
+
+</body>
+</html>

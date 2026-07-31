@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5e5f5ac7;
+        }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(41, 17, 227, 0.577);
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 120px;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Create Assessment</h2>
+    <form action="/create_assessment" method="POST">
+        <table cellpadding="10">
+            <tr>
+                <td>Assessment Name</td>
+                <td><input type="text" name="assessment_name" required></td>
+            </tr>
+            <tr>
+                <td>Subject</td>
+                <td><input type="text" name="subject" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Create</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form action="/admin_dashboard" method="GET">
+        <button type="submit">Back</button>
+    </form>
+</div>
+</body>
+</html>

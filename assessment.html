@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assessment</title>
+</head>
+<body>
+
+
+<h2>{{ assessment_name }}</h2>
+
+{% if questions %}
+<form action="/submit_assessment" method="POST">
+    <input type="hidden" name="assessment_id" value="{{ assessment_id }}">
+
+    {% for question in questions %}
+    <p><b>{{ loop.index }}. {{ question.question }}</b><br></p>
+    <input type="radio" name="q{{ loop.index }}" value="A" required> {{ question.option_a }}<br>
+    <input type="radio" name="q{{ loop.index }}" value="B" required> {{ question.option_b }}<br>
+    <input type="radio" name="q{{ loop.index }}" value="C" required> {{ question.option_c }}<br>
+    <input type="radio" name="q{{ loop.index }}" value="D" required> {{ question.option_d }}<br><br>
+    {% endfor %}
+
+    <input type="submit" value="Submit">
+</form>
+{% else %}
+<p>No questions have been added for this assessment yet.</p>
+{% endif %}
+
+</form>
+
+
+</body>
+</html>
